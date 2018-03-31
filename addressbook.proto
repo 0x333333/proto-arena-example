@@ -1,0 +1,25 @@
+// See README.txt for information and build instructions.
+//
+// Note: START and END tags are used in comments to define sections used in
+// tutorials.  They are not part of the syntax for Protocol Buffers.
+//
+// To get an in-depth walkthrough of this file and the related examples, see:
+// https://developers.google.com/protocol-buffers/docs/tutorials
+
+syntax = "proto2";
+package tutorial;
+import "google/protobuf/timestamp.proto";
+
+option cc_enable_arenas = true;
+
+message Person {
+  required string name = 1;
+  required int32 id = 2;  // Unique ID number for this person.
+  optional string email = 3;
+  optional string phone = 4;
+  optional google.protobuf.Timestamp last_updated = 5;
+}
+
+message AddressBook {
+  repeated Person people = 1;
+}
