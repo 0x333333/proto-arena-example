@@ -1,12 +1,6 @@
-# Protocol Buffers - Code Example
+# Arena Proto Buffer Example
 
-This directory contains example code that uses Protocol Buffers to manage an
-address book. Two programs are provided for each supported language. The
-add_person example adds a new person to an address book, prompting the user to
-input the person's information. The list_people example lists people already in
-the address book. The examples use the exact same format in all three languages,
-so you can, for example, use add_person_java to create an address book and then
-use list_people_python to read it.
+This repository is an example of how to use arena pointer with proto buffer.
 
 These examples are part of the Protocol Buffers tutorial, located at:
   https://developers.google.com/protocol-buffers/docs/tutorials
@@ -59,66 +53,3 @@ To run the examples:
 Note that on some platforms you may have to edit the Makefile and remove
 "-lpthread" from the linker commands (perhaps replacing it with something else).
 We didn't do this automatically because we wanted to keep the example simple.
-
-### Python
-
-Follow instructions in [../README.md](../README.md) to install protoc and then
-follow [../python/README.md](../python/README.md) to install protobuf python
-runtime from source. You can also install python runtime using pip:
-
-    $ pip install protobuf
-
-Make sure the runtime version is the same as protoc binary, or it may not work.
-
-After you have install both protoc and python runtime, run "make python" to
-build two executables (shell scripts actually): add_person_python and
-list_people_python. They work the same way as the C++ executables.
-
-### Java
-
-Follow instructions in [../README.md](../README.md) to install protoc and then
-download protobuf Java runtime .jar file from maven:
-
-    https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java
-
-Then run the following:
-
-    $ export CLASSPATH=/path/to/protobuf-java-[version].jar
-    $ make java
-
-This will create the add_person_java/list_people_java executables (shell
-scripts) and can be used to create/display an address book data file.
-
-### Go
-
-The Go example requires a plugin to the protocol buffer compiler, so it is not
-build with all the other examples.  See:
-
-    https://github.com/golang/protobuf
-
-for more information about Go protocol buffer support.
-
-First, install the Protocol Buffers compiler (protoc).
-
-Then, install the Go Protocol Buffers plugin ($GOPATH/bin must be in your $PATH
-for protoc to find it):
-
-    go get github.com/golang/protobuf/protoc-gen-go
-
-Build the Go samples in this directory with "make go".  This creates the
-following executable files in the current directory:
-
-    add_person_go      list_people_go
-
-To run the example:
-
-    ./add_person_go addressbook.data
-
-to add a person to the protocol buffer encoded file addressbook.data.  The file
-is created if it does not exist.  To view the data, run:
-
-    ./list_people_go addressbook.data
-
-Observe that the C++, Python, and Java examples in this directory run in a
-similar way and can view/modify files created by the Go example and vice
-versa.

@@ -17,19 +17,3 @@ http_archive(
     strip_prefix = "protobuf-master",
     urls = ["https://github.com/google/protobuf/archive/master.zip"],
 )
-
-# Similar to com_google_protobuf_cc but for Java (i.e., java_proto_library).
-http_archive(
-    name = "com_google_protobuf_java",
-    strip_prefix = "protobuf-master",
-    urls = ["https://github.com/google/protobuf/archive/master.zip"],
-)
-
-# Similar to com_google_protobuf_cc but for Java lite. If you are building
-# for Android, the lite version should be prefered because it has a much
-# smaller code size.
-http_archive(
-    name = "com_google_protobuf_javalite",
-    strip_prefix = "protobuf-javalite",
-    urls = ["https://github.com/google/protobuf/archive/javalite.zip"],
-)
